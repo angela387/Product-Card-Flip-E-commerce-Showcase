@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Product Card Flip – E-commerce Showcase</title>
+<style>
+  :root{--bg:#070a10;--text:#eef2ff;--muted:rgba(238,242,255,.72);--border:rgba(255,255,255,.10);--y:#FFD100;--b:#3b82f6;}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:
+    radial-gradient(1100px 700px at 12% 10%, rgba(59,130,246,.18), transparent 60%),
+    radial-gradient(900px 600px at 88% 20%, rgba(255,209,0,.10), transparent 55%),
+    linear-gradient(180deg,#04060b,var(--bg));color:var(--text);font-family:system-ui,Segoe UI,Roboto,Arial}
+  .stage{width:min(980px,92vw);padding:28px;border-radius:26px;border:1px solid var(--border);
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:0 30px 90px rgba(0,0,0,.55);backdrop-filter:blur(10px)}
+  h1{margin:0 0 6px;font-size:22px}
+  .sub{margin:0 0 16px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .flip{perspective:1100px}
+  .card{position:relative;height:250px;border-radius:22px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.9,.2,1)}
+  .flip:hover .card{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;border-radius:22px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.22);
+    backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .thumb{height:120px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+    background:radial-gradient(circle at 30% 30%, rgba(255,209,0,.28), transparent 55%),
+               radial-gradient(circle at 70% 60%, rgba(59,130,246,.22), transparent 55%),
+               linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02))}
+  .name{font-weight:950}
+  .price{font-weight:950;color:rgba(255,255,255,.92)}
+  .btn{margin-top:auto;display:inline-flex;justify-content:center;align-items:center;padding:10px 12px;border-radius:14px;
+    background:rgba(255,209,0,.14);border:1px solid rgba(255,209,0,.28);font-weight:950;color:rgba(255,255,255,.95)}
+  .back{transform:rotateY(180deg);background:linear-gradient(180deg,rgba(255,209,0,.10),rgba(0,0,0,.22))}
+  .small{color:var(--muted);font-size:12px;line-height:1.45}
+</style>
+</head>
+<body>
+<div class="stage">
+  <h1>Product Card Flip – E-commerce Showcase</h1>
+  <div class="sub">E-commerce animation • product flip card preview</div>
+
+  <div class="grid">
+    <div class="flip">
+      <div class="card">
+        <div class="face front">
+          <div class="thumb"></div>
+          <div class="name">Starter Pack</div>
+          <div class="price">$29</div>
+          <div class="btn">Hover to flip</div>
+        </div>
+        <div class="face back">
+          <div style="font-weight:950">Quick Details</div>
+          <div class="small">Minimal product info layout with flip reveal for features and CTA.</div>
+          <div class="btn">Add to Cart</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="card">
+        <div class="face front">
+          <div class="thumb"></div>
+          <div class="name">Premium Bundle</div>
+          <div class="price">$59</div>
+          <div class="btn">Hover to flip</div>
+        </div>
+        <div class="face back">
+          <div style="font-weight:950">Quick Details</div>
+          <div class="small">Ideal for product grids and storefront showcases.</div>
+          <div class="btn">Add to Cart</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip">
+      <div class="card">
+        <div class="face front">
+          <div class="thumb"></div>
+          <div class="name">Limited Edition</div>
+          <div class="price">$79</div>
+          <div class="btn">Hover to flip</div>
+        </div>
+        <div class="face back">
+          <div style="font-weight:950">Quick Details</div>
+          <div class="small">Hover flip with clean easing and readable UI spacing.</div>
+          <div class="btn">Add to Cart</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
